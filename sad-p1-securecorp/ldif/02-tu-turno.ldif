@@ -1,0 +1,40 @@
+# Entrada 1: Tu usuario
+dn: uid=jpeinado,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Juan Manuel Peinado Macias
+sn: Peinado
+uid: jpeinado
+uidNumber: 10001
+gidNumber: 10000
+homeDirectory: /home/jpeinado
+mail: jpeinado@securecorp.local
+loginShell: /bin/bash
+
+# Entrada 2: Marta Torres
+dn: uid=mtorres,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Marta Torres
+sn: Torres
+uid: mtorres
+uidNumber: 10003
+gidNumber: 10000
+homeDirectory: /home/mtorres
+mail: mtorres@securecorp.local
+loginShell: /bin/bash
+
+# Entrada 3: Grupo rrhh
+dn: cn=rrhh,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: rrhh
+member: uid=lromero,ou=people,dc=securecorp,dc=local
+member: uid=mtorres,ou=people,dc=securecorp,dc=local
+
+# Entrada 4: Grupo sistemas
+dn: cn=sistemas,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: sistemas
+member: uid=jpeinado,ou=people,dc=securecorp,dc=local
