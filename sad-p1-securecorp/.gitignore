@@ -1,5 +1,0 @@
-alumno.conf
-entrega/*
-!entrega/.gitkeep
-pki/*
-!pki/.gitkeep
