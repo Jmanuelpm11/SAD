@@ -1,0 +1,86 @@
+### Principals
+Authenticating as principal mtorres/admin@SECURECORP.LOCAL with password.
+K/M@SECURECORP.LOCAL
+host/web.securecorp.local@SECURECORP.LOCAL
+jpeinado@SECURECORP.LOCAL
+kadmin/admin@SECURECORP.LOCAL
+kadmin/changepw@SECURECORP.LOCAL
+krbtgt/SECURECORP.LOCAL@SECURECORP.LOCAL
+lromero@SECURECORP.LOCAL
+mtorres@SECURECORP.LOCAL
+
+### getprinc jpeinado
+Authenticating as principal mtorres/admin@SECURECORP.LOCAL with password.
+Principal: jpeinado@SECURECORP.LOCAL
+Expiration date: [never]
+Last password change: Wed Oct 14 17:53:06 UTC 2026
+Password expiration date: [never]
+Maximum ticket life: 0 days 10:00:00
+Maximum renewable life: 7 days 00:00:00
+Last modified: Wed Oct 14 17:53:06 UTC 2026 (root/admin@SECURECORP.LOCAL)
+Last successful authentication: [never]
+Last failed authentication: [never]
+Failed password attempts: 0
+Number of keys: 2
+Key: vno 1, aes256-cts-hmac-sha384-192
+Key: vno 1, aes128-cts-hmac-sha256-128
+MKey: vno 1
+Attributes:
+Policy: [none]
+
+### getprinc lromero
+Authenticating as principal mtorres/admin@SECURECORP.LOCAL with password.
+Principal: lromero@SECURECORP.LOCAL
+Expiration date: [never]
+Last password change: Wed Oct 14 17:52:54 UTC 2026
+Password expiration date: [never]
+Maximum ticket life: 0 days 10:00:00
+Maximum renewable life: 7 days 00:00:00
+Last modified: Wed Oct 14 17:52:54 UTC 2026 (root/admin@SECURECORP.LOCAL)
+Last successful authentication: [never]
+Last failed authentication: [never]
+Failed password attempts: 0
+Number of keys: 2
+Key: vno 1, aes256-cts-hmac-sha384-192
+Key: vno 1, aes128-cts-hmac-sha256-128
+MKey: vno 1
+Attributes:
+Policy: [none]
+
+### getprinc mtorres
+Authenticating as principal mtorres/admin@SECURECORP.LOCAL with password.
+Principal: mtorres@SECURECORP.LOCAL
+Expiration date: [never]
+Last password change: Wed Oct 14 17:53:12 UTC 2026
+Password expiration date: [never]
+Maximum ticket life: 0 days 10:00:00
+Maximum renewable life: 7 days 00:00:00
+Last modified: Wed Oct 14 18:16:12 UTC 2026 (mtorres/admin@SECURECORP.LOCAL)
+Last successful authentication: [never]
+Last failed authentication: [never]
+Failed password attempts: 0
+Number of keys: 2
+Key: vno 1, aes256-cts-hmac-sha384-192
+Key: vno 1, aes128-cts-hmac-sha256-128
+MKey: vno 1
+Attributes: DISALLOW_ALL_TIX
+Policy: [none]
+
+### getprinc host/web.securecorp.local
+Authenticating as principal mtorres/admin@SECURECORP.LOCAL with password.
+Principal: host/web.securecorp.local@SECURECORP.LOCAL
+Expiration date: [never]
+Last password change: Wed Oct 14 17:53:12 UTC 2026
+Password expiration date: [never]
+Maximum ticket life: 0 days 10:00:00
+Maximum renewable life: 7 days 00:00:00
+Last modified: Wed Oct 14 17:53:12 UTC 2026 (root/admin@SECURECORP.LOCAL)
+Last successful authentication: [never]
+Last failed authentication: [never]
+Failed password attempts: 0
+Number of keys: 2
+Key: vno 1, aes256-cts-hmac-sha384-192
+Key: vno 1, aes128-cts-hmac-sha256-128
+MKey: vno 1
+Attributes:
+Policy: [none]

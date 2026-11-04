@@ -1,0 +1,4 @@
+total 12
+-rw-rw-rw- 1 openldap openldap 2000 Oct 14 17:40 ca.crt
+-rw-rw-rw- 1 openldap openldap 1700 Oct 14 17:40 ldap.crt
+-rw------- 1 openldap openldap 1704 Oct 14 17:40 ldap.key

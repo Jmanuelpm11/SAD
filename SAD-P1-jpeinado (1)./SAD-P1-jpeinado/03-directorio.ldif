@@ -1,0 +1,63 @@
+dn: dc=securecorp,dc=local
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: SecureCorp
+dc: securecorp
+
+dn: ou=people,dc=securecorp,dc=local
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=securecorp,dc=local
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=lromero,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: lromero
+cn: Lucia Romero
+sn: Romero
+mail: lromero@securecorp.local
+uidNumber: 10002
+gidNumber: 10002
+homeDirectory: /home/lromero
+
+dn: uid=jpeinado,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Juan Manuel Peinado Macias
+sn: Peinado
+uid: jpeinado
+uidNumber: 10001
+gidNumber: 10000
+homeDirectory: /home/jpeinado
+mail: jpeinado@securecorp.local
+loginShell: /bin/bash
+
+dn: uid=mtorres,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Marta Torres
+sn: Torres
+uid: mtorres
+uidNumber: 10003
+gidNumber: 10000
+homeDirectory: /home/mtorres
+mail: mtorres@securecorp.local
+loginShell: /bin/bash
+
+dn: cn=rrhh,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: rrhh
+member: uid=lromero,ou=people,dc=securecorp,dc=local
+member: uid=mtorres,ou=people,dc=securecorp,dc=local
+
+dn: cn=sistemas,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: sistemas
+member: uid=jpeinado,ou=people,dc=securecorp,dc=local
+

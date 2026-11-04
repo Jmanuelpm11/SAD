@@ -1,0 +1,47 @@
+### Fecha: 14/10/2026 20:29  ·  Alumno: Juan Manuel Peinado (jpeinado)
+
+### Certificado de la CA
+subject=C = ES, O = SecureCorp, CN = SecureCorp Root CA - Tu Nombre Apellido
+issuer=C = ES, O = SecureCorp, CN = SecureCorp Root CA - Tu Nombre Apellido
+notBefore=Oct 14 17:28:25 2026 GMT
+notAfter=Oct 11 17:28:25 2036 GMT
+X509v3 Basic Constraints: critical
+    CA:TRUE
+X509v3 Key Usage: critical
+    Certificate Sign, CRL Sign
+
+### Certificado del servidor
+subject=C = ES, O = SecureCorp, CN = ldap.securecorp.local
+issuer=C = ES, O = SecureCorp, CN = SecureCorp Root CA - Tu Nombre Apellido
+notBefore=Oct 14 17:29:54 2026 GMT
+notAfter=Jan 16 17:29:54 2029 GMT
+X509v3 Basic Constraints: 
+    CA:FALSE
+X509v3 Key Usage: critical
+    Digital Signature, Key Encipherment
+X509v3 Extended Key Usage: 
+    TLS Web Server Authentication
+X509v3 Subject Alternative Name: 
+    DNS:ldap.securecorp.local
+
+### Verificación
+/pki/servidor/ldap.crt: OK
+
+### Permisos en /etc/ldap/tls
+total 12
+-rw-rw-rw- 1 openldap openldap 2000 Oct 14 17:40 ca.crt
+-rw-rw-rw- 1 openldap openldap 1700 Oct 14 17:40 ldap.crt
+-rw------- 1 openldap openldap 1704 Oct 14 17:40 ldap.key
+
+### /etc/default/slapd
+SLAPD_SERVICES="ldaps:/// ldapi:///"
+
+### cn=config (TLS)
+dn: cn=config
+olcTLSCACertificateFile: /etc/ldap/tls/ca.crt
+olcTLSCertificateFile: /etc/ldap/tls/ldap.crt
+olcTLSCertificateKeyFile: /etc/ldap/tls/ldap.key
+
+
+### /etc/ldap/ldap.conf del cliente
+TLS_CACERT /pki/ca/ca.crt

@@ -1,0 +1,53 @@
+Comprobando la práctica de Juan Manuel Peinado (jpeinado)
+(Que esté todo en verde NO es la nota: en la defensa tendrás que explicarlo.)
+
+BLOQUE A · Certificados y LDAP
+ A1 · La CA de SecureCorp
+   ✔ Existe /pki/ca/ca.crt y es una CA (CA:TRUE)
+   ✔ Es autofirmada y su nombre lleva SecureCorp
+   ✔ La clave /pki/ca/ca.key corresponde al certificado de la CA
+ A2 · El certificado del servidor LDAP
+   ✔ /pki/servidor/ldap.crt está firmado por tu CA
+   ✔ Tiene SAN con DNS:ldap.securecorp.local
+   ✔ La clave /pki/servidor/ldap.key corresponde al certificado
+ A3 · El directorio de SecureCorp
+   ✔ Existen ou=people y ou=groups
+   ✔ Usuario lromero creado y con contraseña
+   ✔ Usuario jpeinado creado y con contraseña
+   ✔ Usuario mtorres creado y con contraseña
+   ✔ Grupo rrhh con lromero y mtorres
+   ✔ Grupo sistemas contigo (jpeinado)
+ A4 · LDAPS
+   ✔ Certificados en /etc/ldap/tls, y la clave solo la lee openldap
+   ✔ slapd tiene configurado el certificado (cn=config)
+   ✔ El cliente confía en tu CA (TLS_CACERT en /etc/ldap/ldap.conf)
+   ✔ Desde el cliente funciona ldaps://ldap.securecorp.local (636)
+   ✔ Desde el cliente ldap:// (389, en claro) ya NO funciona
+
+BLOQUE B · Kerberos
+ B1 · El reino
+   ✔ Existe el reino SECURECORP.LOCAL
+   ✔ El KDC está funcionando
+ B2 · Usuarios y servicio
+   ✔ Existe el principal lromero
+   ✔ Existe el principal jpeinado
+   ✔ Existe el principal mtorres
+   ✔ Existe el principal host/web.securecorp.local
+ B3 · Tickets
+   ✔ Has pedido tu pulsera (TGT) con kinit (AS_REQ en el log)
+   ✔ Has pedido un ticket para host/web con kvno (TGS_REQ en el log)
+   ✔ Lucía también ha pedido su pulsera (AS_REQ de lromero)
+
+PARTE C · Por dentro: Dockerfile y docker-compose
+   ✔ web/Dockerfile completo (sin ____, con FROM, CMD y TLS_CACERT)
+   ✔ docker-compose.yml tiene el servicio web
+   ✔ La máquina sad-p1-web está encendida
+   ✔ Desde web funciona ldaps:// (confía en tu CA desde la imagen)
+   ✔ Has hecho kinit jpeinado DESDE la máquina web (AS_REQ desde su IP en el log)
+
+MINI-RETO (opcional) · Marta se va de vacaciones
+   ✔ mtorres no puede pedir tickets (DISALLOW_ALL_TIX)
+   ✔ Has comprobado que kinit mtorres falla (rechazo en el log)
+
+Obligatorio: 31 de 31 · Total con el mini-reto: 33 de 33 (100 %)
+✔ ¡Todo en verde, mini-reto incluido! Prepárate para explicarlo en la defensa.
