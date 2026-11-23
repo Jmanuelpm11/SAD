@@ -49,7 +49,8 @@ Lo que no se ve es que no hay petiones get claras, ademas no se ve las ips del t
 
 Del **mismo ataque** (la inyección a la web): ¿qué ve el vigilante de la red (el IDS) y qué ve el portero de la web? ¿Por
 qué hacen falta los dos?
-
+Suricata observa el tráfico a nivel de red en la interfaz wan (antes del DNAT), fijándose en paquetes, direcciones IP/puertos y firmas o patrones en el flujo de red sin bloquear en modo IDS.
+El WAF (ModSecurity) inspecciona la petición HTTP a nivel de aplicación (ruta, parámetros/argumentos y carga web) delante de la tienda y decide si bloquearla (403) o permitirla según sus reglas y excepciones.
 >
 
 ## Bloque D · La nota del servidor (D0 y D4)
