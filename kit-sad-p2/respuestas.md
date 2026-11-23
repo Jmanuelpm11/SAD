@@ -34,10 +34,15 @@ En el firewall (`./lab.sh fw`): `tcpdump -ni wan host 198.51.100.62 -c 6`. Mient
 
 ```text
 (pega aquí la salida de tcpdump)
+listening on wan, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+15:47:14.833672 IP 198.51.100.61.55717 > 198.51.100.254.51820: UDP, length 32
+15:47:27.634626 IP 198.51.100.62.47205 > 198.51.100.254.51820: UDP, length 32
+
 ```
 
 En dos líneas: ¿qué se ve por la calle y qué NO se ve?
-
+Lo que se ve es que comercial y la bodega intercambia respuestas
+Lo que no se ve es que no hay petiones get claras, ademas no se ve las ips del tunel
 >
 
 ## Bloque C · Para la defensa (C4)
